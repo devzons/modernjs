@@ -129,6 +129,35 @@ val = str.includes('Hello'); // true
 
 ```
 
+## ES5 vs ES6
+```
+const age = 28;
+
+// without template string
+html = '<ul>' +
+       '<li>Age: ' + age + '</li>' +
+       ...
+
+// with template strings
+html = `
+  <ul>
+    <li>Age: ${age}</li>
+    <li>${2+2}</li>    // insert operation
+    <li>${func()}</li> // insert function
+    <li>${age > 30 ? 'Over 30' : 'Under 30'}</li> // conditional 
+    ...
+`;
+```
+
+## Array
+
+```
+const numbers = [];
+const numbers = new Array();
+
+numbers.length;
+Array.isArray(numbers); // true
+```
 
 
 
