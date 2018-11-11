@@ -440,6 +440,13 @@ document.querySelector('ul.list').appendChild(li);
 console.log(li);
 ```
 
+## Removing, Replacing Elements
+
+```
+// Replace Element
+
+```
+
 
 
 
