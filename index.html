@@ -18,17 +18,22 @@
   <![endif]-->
   
   <div class="container">
-    <div class="row">
-      <div class="card-action">
-          <h5 id="task-title">Tasks</h5>
-          <ul class="list">
-            <li class="collection-item"><a href="#" class="delete-item secondary-content">x</a> <i class="fa fa-remove"></i></li>
-            <li class="collection-item"><a href="#" class="delete-item secondary-content">x</a> <i class="fa fa-remove"></i></li>
-            <li class="collection-item"><a href="#" class="delete-item secondary-content">x</a> <i class="fa fa-remove"></i></li>
-            <li class="collection-item"><a href="#" class="delete-item secondary-content">x</a> <i class="fa fa-remove"></i></li>
-            <li class="collection-item"><a href="#" class="delete-item secondary-content">x</a> <i class="fa fa-remove"></i></li>
-          </ul>
-          <a href="#" class="clear-tasks btn black">Clear Tasks</a>
+    <div class="row">s
+      <div class="col s12">
+        <div id="main" class="card">
+          <div class="card-content">
+            <span class="card-title">Task List</span>
+            <div class="row">
+              <form action="index.php" id="task-form">
+                <div class="input-field col s12">
+                    <input class="input-field col s12"><input type="text" name="task" id="task" value="">
+                    <label for="task">New Task</label>
+                </div> 
+            </div><!--.row-->
+            <button id="add" class="btn">Add</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>

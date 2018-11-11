@@ -630,7 +630,77 @@ function deleteItem(e) {
 
 ```
 
+## Local Sesstion Storage
+
+```
+HTML -----
+
+<div class="container">
+    <div class="row">
+      <div class="col s12">
+        <div id="main" class="card">
+          <div class="card-content">
+            <span class="card-title">Task List</span>
+            <div class="row">
+              <form action="index.php" id="task-form">
+                <div class="input-field col s12">
+                    <input class="input-field col s12"><input type="text" name="task" id="task" value="">
+                    <label for="task">New Task</label>
+                </div> 
+            </div><!--.row-->
+            <button id="add" class="btn">Add</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+JS -------------------------
+// set session storage item - disapear browser closed
+sessionStorage.setItem('name', 'Beth');
+
+// set local storage item
+localStorage.setItem('name', 'John');
+localStorage.setItem('age', '30');
+
+// remove from local storage item
+localStorage.removeItem('name');
+
+// get from storage
+const name = localStorage.getItem('name');
+const name = localStorage.getItem('age');
+
+// clear local storage
+localStorage.clear(); // value to null
+
+// submit event
+document.querySelector('form').addEventListener('submit', function(e) {
+    const task = document.getElementById('task').value;
+
+    let tasks;
+
+    if(localStorage.getItem('tasks')=== null){
+        tasks = [];
+    } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+
+    tasks.push(task);
+
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    alert('Task saved');
+
+    e.preventDefault();
+});
+
+const tasks = JSON.parse(localStorage.getItem('tasks'));
+
+tasks.forEach(function(task) {
+    console.log(task);
+});
 
 
-
+```
 
