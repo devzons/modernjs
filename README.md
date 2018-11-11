@@ -175,8 +175,165 @@ val = today.getSeconds();
 val = today.getMilliseconds();
 val = today.getTime(); // time stamps
 
+setMonth()
+setDate()
+setFullYear()
+setHours()
+setMinutes()
+setSeconds()
 
 ```
+
+## Window Methods / Obejects / Properties
+
+```
+alert();
+prompt();
+confirm();
+
+// Outer height and width
+window.outerHeight;
+window.outerWidth;
+
+//inner height and width
+window.innerHeight;
+window.innerWidth;
+
+// Scroll points
+window.scrollY;
+window.scrollX;
+
+// Location Object
+window.location;
+window.location.hostname;
+window.location.port;
+window.location.href;
+window.location.search;
+
+// Redirect
+window.location.href ="https://google.com";
+
+//Reload
+window.location.reload(); // keep reloading
+
+// History Object - browsing history
+window.history.go(-1); // previous site
+window.history.length; // 
+
+// Navigator Object
+window.navigator;
+window.navigator.appName;
+window.navigator.appVersion;
+window.navigator.userAgent;
+window.navigator.platform;
+window.navigator.vendor;
+window.navigator.language;
+
+```
+
+## Scope
+
+```
+// Global Scope
+var a = 1;
+let b = 2;
+const c = 3;
+
+function test() {
+  // function scope
+  var a = 4;
+  let b = 5;
+  const c = 6;
+}
+
+if(true){
+  // Block Scope
+  var a = 4;
+  let b = 5;
+  const c = 6;
+}
+
+## DOM
+
+```
+let val;
+
+val = document;
+val = document.all; // [html, head,....]
+document.all.length;
+document.head;
+document.body;
+document.doctype;
+document.domain;
+document.URL;
+document.characterSet;
+document.contentType;
+
+document.forms;
+document.forms[0];
+document.forms[0].id;
+document.forms[0].method;
+document.forms[0].action;
+
+document.links;
+document.links[0];
+document.links[0].className;
+document.links[0].classList[0];
+
+document.images;
+
+document.scripts;
+document.scripts[2].getAttribute('src');
+
+// get all scripts src
+let scripts = document.scripts;
+
+let scriptsArr = Array.from(scripts);
+
+scriptsArr.forEach(function(script) {
+  console.log(script.getAttribute('src'));
+});
+
+
+```
+
+## DOM Selectors
+
+// getElementById()
+document.getElementById('id-name');
+document.getElementById('id-name').id;
+document.getElementById('id-name').className;
+
+// change style
+document.getElementById('id-name').style.background = '#333';
+
+// change content
+document.getElementById('id-name').textContent = 'content';
+document.getElementById('id-name').innerText = 'content';
+document.getElementById('id-name').innerHTML = '<p style="color:red;">content</p>';
+
+// querySelector()
+document.querySelector('#id-name');
+document.querySelector('.class-name');
+document.querySelector('h1');
+document.querySelector('li:last-child');
+document.querySelector('li:nth-child(3)');
+document.querySelector('li:nth-child(odd)'); // first odd
+
+## DOM Selectors - Multiple elements
+
+// getElementsByClassName()
+
+const items = document.getElementsByClassName('class-name');
+items[0];
+items[0].style.color = 'red';
+
+const liitems = document.querySelector('ul').getElementByClassName('class-name');
+
+// getElementsByTagName();
+
+
+
 
 
 
