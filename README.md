@@ -299,6 +299,8 @@ scriptsArr.forEach(function(script) {
 
 ## DOM Selectors
 
+```
+
 // getElementById()
 document.getElementById('id-name');
 document.getElementById('id-name').id;
@@ -331,6 +333,115 @@ items[0].style.color = 'red';
 const liitems = document.querySelector('ul').getElementByClassName('class-name');
 
 // getElementsByTagName();
+let lis = document.getElementsByTagName('li');
+
+// Convert HTMLd collection into array
+lis = Array.from(lis);
+lis.reverse();
+lis.forEach(function(li, index){
+  console.log(li.className);
+  li.textContent = `${index}: Hello`;
+});
+
+// querySelectorAll();
+const items = document.querySelectorAll('ul.collection li.collection-item');
+
+items.forEach(function(item, index){
+  item.textContent = `${index}: Hello';
+});
+
+liOdds = document.querySelectorAll('li:nth-child(odd)'); // all odd
+liOdds.forEach(function(odd, index){
+  odd.style.background = '#ccc';
+});
+
+```
+
+## Traversing the DOM
+
+```
+const list = document.querySelector('ul.collection');
+const listItem = document.querySelector('li.collection-item:first-child');
+
+// Get child nodes
+list.childNodes; // li nodes + text nodes: indentation
+list.childNodes[0].nodeName; // text
+list.childNodes[3].nodeType;
+
+1   Element node
+2   Attribute(derprecated)
+3   Text node
+8   Comment
+9   Document itself
+10  Doctype
+
+// Get children element nodes
+list.children;  // li nodes only
+
+// children of children
+list.children[3].children[0].id = 'id-name'; // add id
+
+// first child
+list.firstChild; // text 
+list.firstElementChild; // list item
+
+// last child
+list.lastChild; // text
+list.lastElementChild; // list item
+
+// count child elements
+list.childElementCount;
+
+// get parent node
+listItem.parentNode; // <ul>..
+listItem.parentElement;
+listItem.parentElement.parentElement;
+
+// Get next sibling
+listItem.nextSibling;
+listItem.nextElementSibling.nextElementSibling;
+
+// get prev sibling
+listItem.previousSibling;
+listItem.previousElementSibling;
+
+```
+
+## Creating Elements
+
+```
+// Create element
+const li = document.createElement('li');
+
+// Add class
+li.className = 'collection-item';
+
+// Add id
+li.id = 'new-item';
+
+// Add attribute
+li.setAttribute('title', 'New Item');
+
+// Create text node and append
+li.appendChild(document.createTextNode('Hello World'));
+
+// Create new link element
+const link = document.createElement('a');
+// Add classes
+link.className = 'delete-item secondary-content';
+// Add icon html
+link.innerHTML = '<i class="fa fa-remove"></i>';
+
+// Append link into li
+li.appendChild(link);
+
+// Append li as child to ul
+document.querySelector('ul.list').appendChild(li);
+
+console.log(li);
+
+
+```
 
 
 
