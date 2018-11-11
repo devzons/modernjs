@@ -488,7 +488,70 @@ link.setAttribute('href', 'https://google.com');
 link.hasAttribute('href'); // true or false
 link.removeAttribute('title');
 
+```
 
+## Event Listener, The Event Object
+
+```
+document.querySelector('.clear-tasks').addEventListener('click', function(event) {
+    console.log('Hello World');
+    // event.preventDefault();
+});
+
+document.querySelector('.clear-tasks').addEventListener('click', onClick);
+
+function onClick(e) {
+
+    val = e.target;
+    val = e.target.id;
+    val = e.target.className;
+    val = e.target.classList[0];
+    e.target.innerText = "Hello";
+
+    // event type
+    e.type; // click
+
+    // Timestamp
+    e.timeStamp;
+
+    // Coords event relative to the window
+    e.clientY; // from the top pixel
+    e.clientX; // from the left
+
+    // Coords event relative to the element
+    e.offsetY;
+    e.offsetX;
+
+    console.log(val);
+}
+
+```
+
+## Mouse Events
+
+```
+// Event handler
+
+// click event
+btn.addEventListener('click', runEvent);
+btn.addEventListener('dblclick', runEvent);
+btn.addEventListener('mousedown', runEvent);
+btn.addEventListener('mouseup', runEvent);
+btn.addEventListener('mouseenter', runEvent);
+btn.addEventListener('mouseleave', runEvent);
+btn.addEventListener('mouseover', runEvent);
+btn.addEventListener('mouseout', runEvent);
+btn.addEventListener('mousemove', runEvent);
+
+function runEvent(e) {
+    console.log(`EVENT TYPE: ${e.type}`);
+
+    // change coords by mouse positions
+    el.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+
+    // change background color accroding to mouse coords
+    document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
+}
 
 ```
 
