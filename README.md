@@ -555,6 +555,48 @@ function runEvent(e) {
 
 ```
 
+## Keyboard Input Events, Form Event
+
+```
+const form = document.querySelector('form');
+const taskInput = document.getElementById('task');
+
+// Clear input
+taskInput.value = '';
+
+form.addEventListener('submit', runEvent);
+
+// key events
+taskInput.addEventListener('keydown', runEvent);
+taskInput.addEventListener('keyup', runEvent);
+taskInput.addEventListener('keypress', runEvent);
+// focus
+taskInput.addEventListener('focus', runEvent);
+// blur
+taskInput.addEventListener('blur', runEvent);
+// cut
+taskInput.addEventListener('cut', runEvent);
+// paste
+taskInput.addEventListener('paste', runEvent);
+// input - copy, paste, cut
+taskInput.addEventListener('input', runEvent);
+// change event
+select.election.addEventListener('change', runEvent);
+
+function runEvent(e){
+    console.log(`EVENT TYPE: ${e.type}`);
+
+    // get input value
+    console.log(taskInput.value);
+
+    e.preventDefault();
+
+    // typewirte effect
+    console.log(e.target.value);
+    el.innterText = e.target.value;
+}
+```
+
 
 
 
