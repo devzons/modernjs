@@ -597,7 +597,38 @@ function runEvent(e){
 }
 ```
 
+## Event Bubbling Delegation
 
+```
+// Event Bubbling - to all parent
+
+document.querySelector('.card-title').addEventListener('click', function() {
+    console.log('card title'); 
+});
+
+// Event Delegation - to all children
+
+const delItem = document.querySelector('.delete-item');
+
+delItem.addEventListener('click', deleteItem);
+
+document.body.addEventListener('click', deleteItem);
+
+function deleteItem(e) {
+    
+    console.log('e.target');
+    // if(e.target.className === 'delete-item'){
+    //     console.log('delete item');
+    // }
+
+    // remove parent item(li tag)
+    if(e.target.classList.contains('delete-item')){
+        console.log('delete item');
+        e.target.parentElement.remove();
+    }
+}
+
+```
 
 
 
