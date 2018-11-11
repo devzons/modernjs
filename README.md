@@ -443,7 +443,52 @@ console.log(li);
 ## Removing, Replacing Elements
 
 ```
-// Replace Element
+// Replace h5 title to h2 title ==========
+
+// Create Element
+const newHeading = document.createElement('h2');
+// Add id
+newHeading.id = 'task-title';
+// New Text node
+newHeading.appendChild(document.createTextNode('Task List'));
+
+// Get the old heading
+const oldHeading = document.getElementById('task-title');
+// Parent
+const cardAction = document.querySelector('.card-action');
+
+// Replace
+cardAction.replaceChild(newHeading, oldHeading);
+
+// Remove Element =============
+const lis = document.querySelectorAll('li');
+const list = document.querySelector('ul');
+
+// remove list item
+lis[0].remove();
+
+// remove child element
+list.removeChild('lis[3]');
+
+// Classes & Arrt ==============
+const firstLi = document.querySelector('li:first-child');
+const link = firstLi.children[0];
+
+let val;
+
+val = link.className; // all class name
+val = link.classList; // class name array list
+val = link.classList[0]; // first class element - delete-tiem;
+link.classList.add('test'); // add class
+link.classList.remove('test'); // remove class
+
+// Attribute
+link.getAttribute('href');
+link.setAttribute('href', 'https://google.com');
+link.hasAttribute('href'); // true or false
+link.removeAttribute('title');
+
+
 
 ```
 
