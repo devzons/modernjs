@@ -159,6 +159,25 @@ numbers.length;
 Array.isArray(numbers); // true
 ```
 
+## Date()
+
+```
+const today = new Date();
+let birthday = new Date('9-10-1980 11:25:00');
+
+val = today.getMonth();
+val = today.getDate(); // 9
+val = today.getDay(); // sunday...
+val = today.getFullYear() // 2018
+val = today.getHours();
+val = today.getMinutes();
+val = today.getSeconds();
+val = today.getMilliseconds();
+val = today.getTime(); // time stamps
+
+
+```
+
 
 
 
