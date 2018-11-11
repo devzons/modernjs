@@ -33,8 +33,7 @@ Object Literals
 Functions
 Dates
 Anything Else...
-```
-```
+
 typeof
 ```
 
@@ -130,6 +129,7 @@ val = str.includes('Hello'); // true
 ```
 
 ## ES5 vs ES6
+
 ```
 const age = 28;
 
@@ -181,7 +181,6 @@ setFullYear()
 setHours()
 setMinutes()
 setSeconds()
-
 ```
 
 ## Window Methods / Obejects / Properties
@@ -228,7 +227,6 @@ window.navigator.userAgent;
 window.navigator.platform;
 window.navigator.vendor;
 window.navigator.language;
-
 ```
 
 ## Scope
@@ -252,6 +250,7 @@ if(true){
   let b = 5;
   const c = 6;
 }
+```
 
 ## DOM
 
@@ -439,8 +438,6 @@ li.appendChild(link);
 document.querySelector('ul.list').appendChild(li);
 
 console.log(li);
-
-
 ```
 
 
