@@ -159,6 +159,32 @@ numbers.length;
 Array.isArray(numbers); // true
 ```
 
+## Asynchronous Programming
 
+Most Async code you work with will be part of a API or library
 
+* XMLHttpRequest & Fetch
+* jQuery Ajax, Axios, other HTTP libraries
+* Node.js filesystem module
+
+There ara a few ways to work with Async code
+
+* Callbacks
+* Promises
+* Async/Await
+
+## What is Ajax
+
+* Asynchronous JavaScript & XML
+* Set of web technologies
+* Send & Receive data asynchronously
+* Does not interfere with the current page
+* JSON has replaced XML for the most part
+
+### Diagram of Ajax
+
+  * Make async requests in the background
+  * No page reload/refresh
+  * Fetch data
+  * Very interactive
 
